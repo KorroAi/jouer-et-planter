@@ -1,0 +1,174 @@
+/* Ajouts du site statique (hors WordPress) */
+
+/* Champ piège anti robots du formulaire Brevo : invisible pour les humains */
+.jp-brevo .jp-piege { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+
+/* Message après inscription */
+.jp-brevo-message:empty { display: none; }
+.jp-brevo-message { margin: 0.8em 0 0 !important; font-weight: 600; }
+.jp-brevo.is-envoi button[type="submit"] { opacity: 0.6; pointer-events: none; }
+
+/* ===== Pages ajoutées hors WordPress (jp2) ===== */
+.jp2-section { padding: clamp(48px, 7vw, 96px) 20px; margin-top: 0 !important; margin-bottom: 0 !important; background: #fff; }
+.jp2-section--creme { background: #f6f4ec; }
+.jp2-section--vert { background: #2f6b17; color: #fff; }
+.jp2-section--bleu { background: #2b2f9e; color: #fff; }
+.jp2-contenu { max-width: 1180px; margin: 0 auto; }
+.jp2-titre { font-size: clamp(1.8rem, 3.4vw, 2.5rem) !important; line-height: 1.1; margin: 0 0 .5em; color: #1c3b10; }
+.jp2-section--vert .jp2-titre, .jp2-section--bleu .jp2-titre { color: #fff; }
+.jp2-intro { font-size: clamp(1.1rem, 1.6vw, 1.3rem); max-width: 46em; margin: 0 0 1.6em; }
+.jp2-deux { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+.jp2-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.jp2-grille--4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) { .jp2-deux, .jp2-grille, .jp2-grille--4 { grid-template-columns: 1fr; } }
+@media (min-width: 600px) and (max-width: 900px) { .jp2-grille--4 { grid-template-columns: 1fr 1fr; } }
+.jp2-carte { border-radius: 22px; padding: 26px 24px; color: #1d2410; display: block; text-decoration: none; }
+.jp2-carte h3 { font-size: 1.35rem; line-height: 1.15; margin: .2em 0 .4em; color: inherit; }
+.jp2-carte p { margin: 0; }
+.jp2-carte--orange { background: #fd9a08; }
+.jp2-carte--vert { background: #2f6b17; color: #fff; }
+.jp2-carte--bleu { background: #2b2f9e; color: #fff; }
+.jp2-carte--creme { background: #f6f4ec; border: 2px solid #e3dfd0; }
+.jp2-carte--lien { transition: transform .15s ease, box-shadow .15s ease; }
+.jp2-carte--lien:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(29,36,16,.18); }
+.jp2-fleche { display: inline-block; margin-top: 1em; font-family: Fredoka, sans-serif; font-weight: 600; }
+.jp2-num { font-family: Fredoka, sans-serif; font-weight: 600; font-size: 2.2rem; line-height: 1; opacity: .9; }
+.jp2-encadre { background: #f6f4ec; border-radius: 22px; padding: 26px 28px; }
+.jp2-encadre h3 { margin-top: 0; font-size: 1.35rem; }
+.jp2-coches { list-style: none; padding: 0; margin: 0; }
+.jp2-coches li { position: relative; padding: .35em 0 .35em 1.9em; }
+.jp2-coches li::before { content: "\2713"; position: absolute; left: 0; top: .45em; width: 1.3em; height: 1.3em; border-radius: 50%; background: #2f6b17; color: #fff; font-size: .8em; display: grid; place-items: center; }
+.jp2-docs { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.jp2-docs--ligne { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.jp2-docs a { display: flex; gap: 14px; align-items: center; background: #fff; border: 2px solid #e3dfd0; border-radius: 16px; padding: 14px 16px; color: #1d2410; text-decoration: none; }
+.jp2-docs a:hover { border-color: #fd9a08; }
+.jp2-docs b { display: block; font-family: Fredoka, sans-serif; font-weight: 600; font-size: 1.1rem; }
+.jp2-docs small { display: block; color: #5b6352; }
+.jp2-doc-ico { flex: none; width: 46px; height: 46px; border-radius: 12px; background: #fd9a08; color: #1d2410; display: grid; place-items: center; font-family: Fredoka, sans-serif; font-weight: 600; font-size: .85rem; }
+.jp2-appel { text-align: center; }
+.jp2-appel h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem) !important; margin: 0 0 .3em; color: #fff; }
+.jp2-appel p { font-size: 1.15rem; margin: 0 0 1.4em; }
+.jp2-boutons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.jp2-btn { display: inline-block; border-radius: 999px !important; padding: .8em 1.6em !important; font-weight: 600; text-decoration: none; box-shadow: 0 4px 0 rgba(0,0,0,.18); }
+.jp2-btn--blanc { background: #fff !important; color: #1c3b10 !important; }
+.jp2-btn--orange { background: #fd9a08 !important; color: #1d2410 !important; }
+.jp2-note { margin-top: 1.6em; color: inherit; opacity: .9; }
+.jp2-note a { color: inherit; font-weight: 600; }
+.jp2-artistes { display: grid; gap: 20px; }
+.jp2-artiste { display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: center; background: #f6f4ec; border-radius: 22px; padding: 24px; }
+.jp2-artiste__photo { width: 140px; height: 140px; border-radius: 50%; background: #2b2f9e; color: #fff; display: grid; place-items: center; font-family: Fredoka, sans-serif; font-size: 3.4rem; font-weight: 600; overflow: hidden; }
+.jp2-artiste__photo img { width: 100%; height: 100%; object-fit: cover; }
+.jp2-artiste h3 { font-size: 1.8rem; margin: 0; }
+.jp2-etiquette { display: inline-block; margin: .4em 0 .6em; background: #fd9a08; border-radius: 999px; padding: .2em .9em; font-weight: 600; font-size: .95rem; }
+@media (max-width: 600px) { .jp2-artiste { grid-template-columns: 1fr; text-align: center; } .jp2-artiste__photo { margin: 0 auto; } }
+.jp2-membre { background: #fff; border-radius: 22px; padding: 24px; text-align: center; }
+.jp2-membre__ico { font-size: 2.2rem; }
+.jp2-membre h3 { font-size: 1.2rem; margin: .4em 0; }
+.jp2-membre p { margin: .2em 0; overflow-wrap: break-word; font-size: .95rem; }
+.jp2-equipe { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important; }
+.jp2-membre a { color: #2f6b17; font-weight: 600; }
+/* Accueil : compteurs et prochain rendez vous */
+.jp2-dons { text-align: center; }
+.jp2-grand { font-size: clamp(2.4rem, 6vw, 4.2rem) !important; line-height: 1; margin: 0 0 .6em; color: #fff; }
+.jp2-compteurs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 781px) { .jp2-compteurs { grid-template-columns: 1fr; } }
+.jp2-compteur { background: rgba(255,255,255,.1); border-radius: 22px; padding: 24px 18px; }
+.jp2-compteur__nombre { display: block; font-family: Fredoka, sans-serif; font-weight: 600; font-size: clamp(1.4rem, 2.4vw, 1.8rem); color: #fd9a08; }
+.jp2-compteur__nombre b { font-size: clamp(3rem, 6vw, 4.4rem); line-height: 1; }
+.jp2-compteur__texte { display: block; font-size: 1.15rem; margin-top: .3em; }
+.jp2-rdv { margin: 34px auto 0; max-width: 640px; background: #fff; color: #1d2410; border-radius: 22px; padding: 22px; display: grid; gap: 6px; justify-items: center; }
+.jp2-rdv__label { font-family: Fredoka, sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .85rem; color: #2f6b17; }
+.jp2-rdv__titre { font-family: Fredoka, sans-serif; font-weight: 600; font-size: 1.7rem; }
+.jp2-rdv__date { font-size: 1.1rem; margin-bottom: 10px; }
+/* Carte */
+.jp2-carte-map { height: min(70vh, 560px); border-radius: 22px; overflow: hidden; border: 2px solid #e3dfd0; z-index: 0; }
+.jp2-villes { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.jp2-villes button { border: 2px solid #2f6b17; background: #fff; color: #1c3b10; border-radius: 999px; padding: .4em 1em; font: 600 1rem Fredoka, sans-serif; cursor: pointer; }
+.jp2-villes button:hover { background: #2f6b17; color: #fff; }
+/* Menu plus long : un peu plus serré sur les écrans moyens */
+@media (min-width: 600px) and (max-width: 1250px) { .jp-menu .wp-block-navigation-item__content { font-size: .92rem; } .jp-menu.wp-block-navigation { gap: .9em !important; } }
+
+/* Prochain rendez vous avec affiche */
+.jp2-rdv { max-width: 760px !important; grid-template-columns: 220px 1fr; align-items: center; text-align: left; justify-items: start !important; gap: 22px !important; }
+.jp2-rdv__affiche img { width: 220px; height: auto; border-radius: 14px; display: block; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.jp2-rdv__texte { display: grid; gap: 6px; justify-items: start; }
+.jp2-rdv__lieu { font-weight: 600; color: #2b2f9e; margin-bottom: 10px; }
+@media (max-width: 600px) { .jp2-rdv { grid-template-columns: 1fr; justify-items: center !important; text-align: center; } .jp2-rdv__texte { justify-items: center; } .jp2-rdv__affiche img { width: 100%; max-width: 300px; } }
+
+/* Carte : légende */
+.jp2-legende { list-style: none; padding: 0; margin: 0 0 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px 20px; }
+.jp2-legende li { display: flex; gap: 10px; align-items: flex-start; font-size: 1rem; }
+.jp2-point { flex: none; width: 18px; height: 18px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.35); margin-top: 2px; }
+/* Artiste : bouton YouTube sous la photo */
+.jp2-artiste { grid-template-columns: 160px 1fr; }
+.jp2-artiste__col { display: grid; gap: 10px; justify-items: center; }
+.jp2-yt { display: inline-block; background: #e62117; color: #fff !important; border-radius: 999px; padding: .45em 1em; font-family: Fredoka, sans-serif; font-weight: 600; font-size: .95rem; text-decoration: none; white-space: nowrap; }
+.jp2-yt:hover { background: #b8180f; }
+@media (max-width: 600px) { .jp2-artiste { grid-template-columns: 1fr; } }
+/* Nos valeurs */
+.jp2-but { font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.45; max-width: 36em; margin: 0 auto 1.6em; text-align: center; }
+.jp2-valeurs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+@media (max-width: 781px) { .jp2-valeurs { grid-template-columns: 1fr; } }
+.jp2-valeur { display: block; border-radius: 26px; padding: 32px 30px; text-decoration: none; color: #1d2410; transition: transform .15s ease, box-shadow .15s ease; }
+.jp2-valeur.jp2-carte--vert { color: #fff; }
+.jp2-valeur:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(29,36,16,.2); }
+.jp2-valeur h2 { font-size: clamp(2rem, 4vw, 2.8rem) !important; margin: .1em 0 .3em; color: inherit; }
+.jp2-valeur p { font-size: 1.2rem; margin: 0; }
+.jp2-valeur__ico { font-size: 2.6rem; }
+.jp2-engagement { background: #fff; border-radius: 22px; padding: 24px; }
+.jp2-engagement .jp2-num { color: #fd9a08; }
+.jp2-engagement p { font-size: 1.12rem; margin: .4em 0 0; }
+.jp2-qui { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: center; }
+@media (max-width: 781px) { .jp2-qui { grid-template-columns: 1fr; } }
+.jp2-duo { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.jp2-rond { width: 160px; height: 160px; border-radius: 50%; display: grid; place-content: center; text-align: center; font-family: Fredoka, sans-serif; font-weight: 600; font-size: 1.15rem; }
+.jp2-rond span { font-size: 2.2rem; display: block; }
+.jp2-plus { font-family: Fredoka, sans-serif; font-size: 2.4rem; font-weight: 600; color: #fd9a08; }
+@media (max-width: 400px) { .jp2-rond { width: 130px; height: 130px; font-size: 1rem; } }
+/* Pas de bande blanche entre la dernière section et le bandeau newsletter */
+.wp-site-blocks > footer, .wp-site-blocks > .wp-block-template-part:last-child { margin-block-start: 0 !important; }
+main.wp-block-group { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+main .entry-content { padding-bottom: 0 !important; margin-bottom: 0 !important; }
+/* Historique d'un challenge */
+.jp2-historique { margin: .6em 0 0 !important; background: #eaf3e3; border-left: 5px solid #2f6b17; border-radius: 10px; padding: .7em 1em; color: #1d2410; font-size: 1rem; }
+
+/* Les sections ajoutées remontent aussi sous la courbe des bandeaux photo (plus de coins blancs) */
+.jp-visuel--haut + .jp2-section {
+  margin-top: -120px !important;
+  padding-top: calc(clamp(48px, 7vw, 96px) + 120px) !important;
+  scroll-margin-top: -120px;
+}
+
+/* Boutons des villes sous la carte : contour orange */
+.jp2-villes button { border-color: #fd9a08 !important; }
+.jp2-villes button:hover { background: #fd9a08 !important; color: #1d2410 !important; }
+/* Accueil : engagements en cartes numérotées */
+.jp-engagements-accueil .jp2-engagements, .jp2-engagements { margin-top: 1.4em; }
+
+/* Page dons : animation de la graine, bouton sans fond ni cadre */
+.jp2-graine { display: block; max-width: 380px; width: 100%; margin: 1.4em 0 .2em; background: none; border: 0; box-shadow: none; padding: 0; cursor: pointer; font: inherit; color: inherit; text-align: center; }
+.jp2-graine__svg { display: block; width: 100%; height: auto; overflow: hidden; }
+.jp2-graine__aide { display: inline-block; margin-top: .3em; font-family: Fredoka, sans-serif; font-weight: 600; font-size: 1rem; color: #2f6b17; border-bottom: 2px dashed #fd9a08; }
+.jp2-graine:hover .jp2-graine__aide, .jp2-graine:focus-visible .jp2-graine__aide { color: #1c3b10; border-bottom-style: solid; }
+.jp2-graine:focus-visible { outline: 3px solid #fd9a08; outline-offset: 4px; border-radius: 12px; }
+
+.jp2-graine, .jp2-graine:hover, .jp2-graine:focus { border: 0 !important; background: none !important; box-shadow: none !important; }
+.jp2-graine:focus:not(:focus-visible) { outline: none !important; }
+
+.jp2-artiste--sans-photo { grid-template-columns: 1fr !important; }
+
+/* Page « Ma commune veut une fête » */
+.jp2-form { display: grid; gap: 14px; background: #fff; border-radius: 22px; padding: 24px; box-shadow: 0 10px 28px rgba(140,90,20,.10); }
+.jp2-form label { display: block; font-family: Fredoka, sans-serif; font-weight: 600; color: #1c3b10; }
+.jp2-form label b { color: #b86500; }
+.jp2-form input, .jp2-form select, .jp2-form textarea { font: 1rem/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; padding: .7em .9em; border: 2px solid #e3dfd0; border-radius: 12px; background: #fff; color: #1d2410; }
+.jp2-form input:focus, .jp2-form select:focus, .jp2-form textarea:focus { border-color: #fd9a08; outline: none; }
+.jp2-form button { justify-self: start; border: 0; cursor: pointer; }
+.jp2-form__message:empty { display: none; }
+.jp2-form__message { margin: 0; font-weight: 600; color: #2f6b17; }
+.jp2-commune { background: #f6f4ec; border-radius: 22px; padding: 24px; }
+.jp2-commune h3 { margin: 0; font-size: 1.5rem; }
+.jp2-partager { border: 0; cursor: pointer; }
+.jp2-vide { text-align: center; font-size: 1.1rem; }
+
+.jp2-form input, .jp2-form select, .jp2-form textarea { display: block; width: 100%; box-sizing: border-box; margin-top: 6px; }

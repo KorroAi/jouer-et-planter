@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joueretplanter.com/sitemap.xml

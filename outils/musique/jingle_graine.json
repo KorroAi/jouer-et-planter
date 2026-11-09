@@ -1,0 +1,311 @@
+{
+ "format": "onde/1",
+ "name": "Jingle graine de bonheur",
+ "tempo": 120,
+ "time_signature": [
+  4,
+  4
+ ],
+ "sample_rate": 48000,
+ "key": "Do majeur",
+ "instruments": [
+  {
+   "id": "glock",
+   "type": "multisample",
+   "source": "C:/Users/kevin/AppData/Roaming/Onde/banques/vsco2/VSCO-2-CE-SFZ/Glockenspiel.sfz",
+   "level_db": -2
+  },
+  {
+   "id": "violons",
+   "type": "multisample",
+   "source": "C:/Users/kevin/AppData/Roaming/Onde/banques/vsco2/VSCO-2-CE-SFZ/ViolinEnsPizz.sfz",
+   "level_db": 0
+  },
+  {
+   "id": "violoncelles",
+   "type": "multisample",
+   "source": "C:/Users/kevin/AppData/Roaming/Onde/banques/vsco2/VSCO-2-CE-SFZ/CelloEnsPizz.sfz",
+   "level_db": 0
+  },
+  {
+   "id": "marimba",
+   "type": "multisample",
+   "source": "C:/Users/kevin/AppData/Roaming/Onde/banques/vsco2/VSCO-2-CE-SFZ/Marimba.sfz",
+   "level_db": -4
+  }
+ ],
+ "patterns": [
+  {
+   "id": "jingle",
+   "length": "2bar",
+   "humanize_ms": 4,
+   "chords": {},
+   "notes": {
+    "glock": [
+     {
+      "at": 0.0,
+      "len": "1/16",
+      "key": "G6",
+      "vel": 0.45
+     },
+     {
+      "at": 0.2,
+      "len": "1/16",
+      "key": "E6",
+      "vel": 0.5
+     },
+     {
+      "at": 0.4,
+      "len": "1/16",
+      "key": "D6",
+      "vel": 0.55
+     },
+     {
+      "at": 0.6,
+      "len": "1/16",
+      "key": "C6",
+      "vel": 0.6000000000000001
+     },
+     {
+      "at": 0.8,
+      "len": "1/16",
+      "key": "A5",
+      "vel": 0.65
+     },
+     {
+      "at": 1.0,
+      "len": "1/16",
+      "key": "G5",
+      "vel": 0.7
+     },
+     {
+      "at": 1.2,
+      "len": "1/16",
+      "key": "E5",
+      "vel": 0.75
+     },
+     {
+      "at": 4.0,
+      "len": "1/8",
+      "key": "G5",
+      "vel": 0.6
+     },
+     {
+      "at": 4.24,
+      "len": "1/8",
+      "key": "A5",
+      "vel": 0.6
+     },
+     {
+      "at": 5.0,
+      "len": "1/8",
+      "key": "C6",
+      "vel": 0.62
+     },
+     {
+      "at": 5.14,
+      "len": "1/8",
+      "key": "D6",
+      "vel": 0.66
+     },
+     {
+      "at": 5.28,
+      "len": "1/8",
+      "key": "E6",
+      "vel": 0.7
+     },
+     {
+      "at": 5.42,
+      "len": "1/8",
+      "key": "G6",
+      "vel": 0.74
+     },
+     {
+      "at": 5.56,
+      "len": "1/8",
+      "key": "A6",
+      "vel": 0.78
+     },
+     {
+      "at": 5.7,
+      "len": "1/8",
+      "key": "C7",
+      "vel": 0.8200000000000001
+     },
+     {
+      "at": 6.6,
+      "len": "1/2",
+      "key": "C6",
+      "vel": 0.9
+     },
+     {
+      "at": 6.6,
+      "len": "1/2",
+      "key": "E6",
+      "vel": 0.9
+     },
+     {
+      "at": 6.6,
+      "len": "1/2",
+      "key": "G6",
+      "vel": 0.9
+     }
+    ],
+    "violons": [
+     {
+      "at": 1.4,
+      "len": "1/8",
+      "key": "C4",
+      "vel": 0.9
+     },
+     {
+      "at": 1.4,
+      "len": "1/8",
+      "key": "G4",
+      "vel": 0.85
+     },
+     {
+      "at": 2.8,
+      "len": "1/8",
+      "key": "C4",
+      "vel": 0.55
+     },
+     {
+      "at": 3.05,
+      "len": "1/8",
+      "key": "E4",
+      "vel": 0.5900000000000001
+     },
+     {
+      "at": 3.3,
+      "len": "1/8",
+      "key": "G4",
+      "vel": 0.63
+     },
+     {
+      "at": 3.55,
+      "len": "1/8",
+      "key": "A4",
+      "vel": 0.67
+     },
+     {
+      "at": 3.8,
+      "len": "1/8",
+      "key": "C5",
+      "vel": 0.7100000000000001
+     },
+     {
+      "at": 4.05,
+      "len": "1/8",
+      "key": "D5",
+      "vel": 0.75
+     },
+     {
+      "at": 4.3,
+      "len": "1/8",
+      "key": "E5",
+      "vel": 0.79
+     },
+     {
+      "at": 4.55,
+      "len": "1/8",
+      "key": "G5",
+      "vel": 0.8300000000000001
+     },
+     {
+      "at": 6.6,
+      "len": "1/4",
+      "key": "C5",
+      "vel": 0.9
+     },
+     {
+      "at": 6.6,
+      "len": "1/4",
+      "key": "E5",
+      "vel": 0.9
+     },
+     {
+      "at": 6.6,
+      "len": "1/4",
+      "key": "G5",
+      "vel": 0.9
+     },
+     {
+      "at": 6.6,
+      "len": "1/4",
+      "key": "C6",
+      "vel": 0.9
+     }
+    ],
+    "violoncelles": [
+     {
+      "at": 1.4,
+      "len": "1/4",
+      "key": "C2",
+      "vel": 0.95
+     },
+     {
+      "at": 2.8,
+      "len": "1/8",
+      "key": "C3",
+      "vel": 0.6
+     },
+     {
+      "at": 4.0,
+      "len": "1/8",
+      "key": "F2",
+      "vel": 0.7
+     },
+     {
+      "at": 5.0,
+      "len": "1/8",
+      "key": "G2",
+      "vel": 0.75
+     },
+     {
+      "at": 6.6,
+      "len": "1/2",
+      "key": "C2",
+      "vel": 0.95
+     }
+    ],
+    "marimba": [
+     {
+      "at": 1.4,
+      "len": "1/8",
+      "key": "C3",
+      "vel": 0.8
+     },
+     {
+      "at": 6.6,
+      "len": "1/4",
+      "key": "C4",
+      "vel": 0.7
+     },
+     {
+      "at": 6.6,
+      "len": "1/4",
+      "key": "G4",
+      "vel": 0.7
+     }
+    ]
+   }
+  }
+ ],
+ "arrangement": [
+  {
+   "pattern": "jingle",
+   "start": "0bar"
+  }
+ ],
+ "audio": [],
+ "mixer": [],
+ "master": {
+  "volume_db": -4,
+  "effects": [],
+  "mastering": "streaming"
+ },
+ "automation": [],
+ "end": 9,
+ "markers": []
+}

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Quitter WordPress : le guide</title>
+<style>
+@font-face { font-family: Fredoka; font-weight: 300 700; src: url('../../public/assets/fonts/X7n64b87HvSqjb_WIi2yDCRwoQ_k7367_DWu89U.woff2') format('woff2'); }
+@page { size: A4; margin: 0; }
+:root {
+  --orange: #fd9a08; --vert: #2f6b17; --bleu: #2b2f9e; --foret: #1c3b10;
+  --encre: #1d2410; --doux: #5b6352; --fond: #f6f4ec; --trait: #e3dfd0;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--encre); font-size: 11.5pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+h1, h2, h3, .num, .badge, .titre-etape { font-family: Fredoka, sans-serif; }
+
+.page { width: 210mm; height: 297mm; padding: 16mm 17mm 14mm; position: relative; page-break-after: always; overflow: hidden; }
+.page:last-child { page-break-after: auto; }
+.pied { position: absolute; left: 17mm; right: 17mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 8.5pt; color: var(--doux); }
+
+/* Couverture */
+.couv { background: var(--foret); color: #fff; display: flex; flex-direction: column; }
+.couv .logo { width: 34mm; height: 34mm; border-radius: 50%; background: #fff; display: grid; place-items: center; }
+.couv .logo img { width: 27mm; }
+.couv h1 { font-size: 40pt; line-height: 1.02; margin: 16mm 0 5mm; font-weight: 600; }
+.couv h1 span { color: var(--orange); }
+.couv .chapeau { font-size: 14pt; max-width: 150mm; opacity: .92; margin: 0; }
+.couv .avant { margin-top: auto; background: rgba(255,255,255,.08); border-radius: 6mm; padding: 7mm 8mm; }
+.couv .avant h2 { margin: 0 0 3mm; font-size: 15pt; color: var(--orange); font-weight: 600; }
+.couv .avant ul { margin: 0; padding-left: 5mm; }
+.couv .avant li { margin: 1.5mm 0; }
+.couv .pied { color: rgba(255,255,255,.6); }
+
+/* Carte du parcours */
+h2.section { font-size: 22pt; margin: 0 0 2mm; font-weight: 600; color: var(--foret); }
+.sous { color: var(--doux); margin: 0 0 7mm; }
+.parcours { list-style: none; margin: 0; padding: 0; display: grid; gap: 3.2mm; }
+.parcours li { display: grid; grid-template-columns: 12mm 1fr auto; align-items: center; gap: 4mm; background: var(--fond); border-radius: 4mm; padding: 3.2mm 5mm 3.2mm 3.2mm; }
+.parcours .num { width: 12mm; height: 12mm; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 600; font-size: 14pt; }
+.parcours b { display: block; font-family: Fredoka, sans-serif; font-weight: 600; font-size: 12.5pt; }
+.parcours small { color: var(--doux); font-size: 9.5pt; }
+.badge { font-size: 8.5pt; font-weight: 600; padding: 1.2mm 3mm; border-radius: 99px; white-space: nowrap; }
+.toi { background: var(--orange); color: var(--encre); }
+.claude { background: var(--bleu); color: #fff; }
+.duo { background: var(--vert); color: #fff; }
+.legende { display: flex; gap: 4mm; margin-top: 7mm; font-size: 9.5pt; color: var(--doux); align-items: center; flex-wrap: wrap; }
+.regle { margin-top: 6mm; border: 2px solid var(--orange); border-radius: 4mm; padding: 4mm 5mm; font-size: 10.5pt; }
+.regle b { font-family: Fredoka, sans-serif; color: #b86500; }
+
+/* Étapes */
+.etape { border-radius: 5mm; border: 1.5px solid var(--trait); padding: 6mm 7mm 5mm; margin-bottom: 6mm; break-inside: avoid; }
+.entete { display: flex; align-items: center; gap: 4mm; margin-bottom: 3mm; }
+.entete .num { width: 13mm; height: 13mm; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 600; font-size: 16pt; flex: none; }
+.titre-etape { font-size: 16pt; font-weight: 600; margin: 0; line-height: 1.15; }
+.pourquoi { color: var(--doux); margin: 0 0 3mm; font-size: 10.5pt; }
+ol.actions { margin: 0; padding: 0; list-style: none; counter-reset: a; }
+ol.actions li { counter-increment: a; position: relative; padding: 1.6mm 0 1.6mm 11mm; border-top: 1px dashed var(--trait); }
+ol.actions li:first-child { border-top: 0; }
+ol.actions li::before { content: ""; position: absolute; left: 0; top: 2mm; width: 5.5mm; height: 5.5mm; border: 1.8px solid var(--encre); border-radius: 1.4mm; }
+ol.actions li::after { content: counter(a); position: absolute; left: 6.8mm; top: 1.9mm; font-size: 8pt; color: var(--doux); font-weight: 700; }
+.qui { font-family: Fredoka, sans-serif; font-weight: 600; font-size: 9pt; padding: .4mm 2.2mm; border-radius: 99px; margin-right: 1.5mm; }
+code { font-family: Consolas, "Courier New", monospace; background: var(--fond); border: 1px solid var(--trait); border-radius: 1.2mm; padding: .2mm 1.4mm; font-size: 9.5pt; }
+.ok { margin-top: 3mm; background: #eaf3e3; border-radius: 3mm; padding: 2.6mm 4mm; font-size: 10.5pt; }
+.ok b { color: var(--vert); font-family: Fredoka, sans-serif; }
+.attention { margin-top: 3mm; background: #fff3df; border-radius: 3mm; padding: 2.6mm 4mm; font-size: 10.5pt; }
+.attention b { color: #b86500; font-family: Fredoka, sans-serif; }
+.dire { margin-top: 3mm; background: #e9eaf8; border-radius: 3mm; padding: 2.6mm 4mm; font-size: 10.5pt; }
+.dire b { color: var(--bleu); font-family: Fredoka, sans-serif; }
+.c-toi { background: var(--orange); } .c-claude { background: var(--bleu); } .c-duo { background: var(--vert); }
+
+/* Fin */
+.fin { background: var(--fond); }
+.fin table { width: 100%; border-collapse: collapse; font-size: 10.5pt; margin-top: 4mm; }
+.fin td { padding: 3mm 3mm; border-bottom: 1px solid var(--trait); vertical-align: top; }
+.fin td:first-child { font-family: Fredoka, sans-serif; font-weight: 600; width: 52mm; }
+.case { display: inline-block; width: 5mm; height: 5mm; border: 1.8px solid var(--encre); border-radius: 1.2mm; vertical-align: -1mm; margin-right: 2mm; }
+</style>
+</head>
+<body>
+
+<!-- 1. Couverture -->
+<section class="page couv">
+  <div class="logo"><img src="../../public/wp-content/uploads/2026/07/1000010723.png" alt=""></div>
+  <h1>Quitter WordPress<br><span>pas à pas</span></h1>
+  <p class="chapeau">Mettre joueretplanter.com sur Vercel, passer la newsletter sur Brevo et récupérer le nom de domaine. Sans coupure du site, sans perdre un seul abonné.</p>
+  <div class="avant">
+    <h2>Avant de commencer, prépare</h2>
+    <ul>
+      <li>ton accès à <b>WordPress.com</b> (celui qui gère joueretplanter.com) ;</li>
+      <li>la boîte mail <b>joueretplanter@proton.me</b> ;</li>
+      <li>une <b>carte bancaire</b> pour le transfert du domaine (étape 7, un an de renouvellement à payer) ;</li>
+      <li>Claude Code ouvert dans le dossier <code style="background:rgba(255,255,255,.12);border-color:transparent;color:#fff">Desktop/claude/jouer-et-planter</code>.</li>
+    </ul>
+  </div>
+  <div class="pied"><span>Association Jouer et Planter</span><span>Guide du 9 novembre 2026</span></div>
+</section>
+
+<!-- 2. Le parcours -->
+<section class="page">
+  <h2 class="section">Le parcours en 8 étapes</h2>
+  <p class="sous">Fais les étapes dans l'ordre. Coche chaque case quand c'est fait.</p>
+  <ul class="parcours">
+    <li><span class="num c-claude">1</span><span><b>Mettre le site en ligne sur Vercel</b><small>Fait : jouer-et-planter.vercel.app</small></span><span class="badge claude">Fait ✓</span></li>
+    <li><span class="num c-toi">2</span><span><b>Créer le compte Brevo</b><small>Le nouvel outil de newsletter de l'association.</small></span><span class="badge toi">Toi</span></li>
+    <li><span class="num c-duo">3</span><span><b>Créer le formulaire d'inscription</b><small>Et le brancher sur le site.</small></span><span class="badge duo">Toi + Claude</span></li>
+    <li><span class="num c-toi">4</span><span><b>Déménager les abonnés</b><small>De WordPress vers Brevo.</small></span><span class="badge toi">Toi</span></li>
+    <li><span class="num c-duo">5</span><span><b>Brancher joueretplanter.com sur Vercel</b><small>Le vrai site bascule, sans coupure.</small></span><span class="badge duo">Toi + Claude</span></li>
+    <li><span class="num c-duo">6</span><span><b>Valider l'adresse d'envoi des emails</b><small>Pour que la newsletter n'arrive pas en spam.</small></span><span class="badge duo">Toi + Claude</span></li>
+    <li><span class="num c-duo">7</span><span><b>Transférer le nom de domaine</b><small>Il quitte WordPress pour de bon.</small></span><span class="badge duo">Toi + Claude</span></li>
+    <li><span class="num c-toi">8</span><span><b>Fermer WordPress</b><small>Seulement quand tout le reste marche.</small></span><span class="badge toi">Toi</span></li>
+  </ul>
+  <div class="legende"><span class="badge toi">Toi</span> tu le fais sur ton compte <span class="badge claude">Claude</span> tu lui demandes, il le fait <span class="badge duo">Toi + Claude</span> chacun sa part</div>
+  <div class="regle"><b>La règle d'or :</b> ne touche pas à WordPress avant l'étape 8. Tant qu'il est en ligne, il sert de filet de sécurité, et c'est là que sont tes abonnés.</div>
+  <div class="pied"><span>Quitter WordPress pas à pas</span><span>2</span></div>
+</section>
+
+<!-- 3. Étapes 1 à 3 -->
+<section class="page">
+  <div class="etape">
+    <div class="entete"><span class="num c-claude">1</span><h3 class="titre-etape">Mettre le site en ligne sur Vercel <span class="badge duo" style="font-size:9pt;vertical-align:3px">Fait le 9 novembre</span></h3></div>
+    <p class="pourquoi">Claude a publié le site à une adresse provisoire. Il reste juste à le regarder.</p>
+    <ol class="actions">
+      <li><span class="qui claude">Claude</span>Site publié sur <b>https://jouer-et-planter.vercel.app</b> et comparé page par page avec joueretplanter.com : identique, sauf les commentaires sous les articles.</li>
+      <li><span class="qui toi">Toi</span>Ouvre cette adresse sur ton téléphone et sur l'ordinateur, puis clique un peu partout.</li>
+      <li><span class="qui toi">Toi</span>La case newsletter affiche « Les inscriptions rouvrent très bientôt » : c'est normal, elle sera branchée à l'étape 3.</li>
+    </ol>
+    <div class="ok"><b>C'est bon quand</b> le site s'affiche exactement comme joueretplanter.com aujourd'hui.</div>
+  </div>
+
+  <div class="etape">
+    <div class="entete"><span class="num c-toi">2</span><h3 class="titre-etape">Créer le compte Brevo</h3></div>
+    <p class="pourquoi">Brevo remplace la newsletter de WordPress. C'est une société française, et l'offre gratuite suffit pour commencer.</p>
+    <ol class="actions">
+      <li><span class="qui toi">Toi</span>Va sur <code>brevo.com</code> et clique sur « S'inscrire gratuitement ».</li>
+      <li><span class="qui toi">Toi</span>Inscris-toi avec <b>joueretplanter@proton.me</b>, au nom de l'association.</li>
+      <li><span class="qui toi">Toi</span>Confirme ton adresse depuis la boîte Proton et choisis l'offre gratuite.</li>
+    </ol>
+    <div class="ok"><b>C'est bon quand</b> tu arrives sur le tableau de bord Brevo.</div>
+  </div>
+
+  <div class="pied"><span>Quitter WordPress pas à pas</span><span>3</span></div>
+</section>
+
+<section class="page">
+  <div class="etape">
+    <div class="entete"><span class="num c-duo">3</span><h3 class="titre-etape">Créer le formulaire d'inscription</h3></div>
+    <p class="pourquoi">C'est la case « Ton adresse email » en bas de chaque page du site.</p>
+    <ol class="actions">
+      <li><span class="qui toi">Toi</span>Dans Brevo : <b>Contacts › Listes</b>, crée une liste « Newsletter Jouer et Planter ».</li>
+      <li><span class="qui toi">Toi</span><b>Contacts › Formulaires</b> : crée un formulaire relié à cette liste, en français, avec la <b>double confirmation</b> activée.</li>
+      <li><span class="qui toi">Toi</span>Sur l'écran de partage du formulaire, choisis le code HTML et copie le lien après <code>action="</code>. Il ressemble à <code>https://….sibforms.com/serve/…</code>.</li>
+      <li><span class="qui claude">Claude</span>Colle lui ce lien. Il le branche sur toutes les pages et republie le site.</li>
+      <li><span class="qui toi">Toi</span>Inscris ta propre adresse sur jouer-et-planter.vercel.app, puis clique le lien de confirmation reçu.</li>
+    </ol>
+    <div class="ok"><b>C'est bon quand</b> ton adresse apparaît dans la liste Brevo.</div>
+  </div>
+  <div class="etape">
+    <div class="entete"><span class="num c-toi">4</span><h3 class="titre-etape">Déménager les abonnés</h3></div>
+    <p class="pourquoi">Les personnes déjà inscrites sur WordPress passent dans Brevo. Personne n'a besoin de se réinscrire.</p>
+    <ol class="actions">
+      <li><span class="qui toi">Toi</span>Sur WordPress.com, ouvre joueretplanter.com, puis la partie <b>Abonnés</b>, et exporte la liste (fichier CSV).</li>
+      <li><span class="qui toi">Toi</span>Dans Brevo : <b>Contacts › Importer des contacts</b>, choisis ce fichier et la liste de l'étape 3.</li>
+      <li><span class="qui toi">Toi</span>Range le fichier CSV en lieu sûr, hors du dossier du site : il contient des adresses personnelles.</li>
+    </ol>
+    <div class="ok"><b>C'est bon quand</b> la liste Brevo compte autant d'abonnés que WordPress.</div>
+  </div>
+
+  <div class="pied"><span>Quitter WordPress pas à pas</span><span>4</span></div>
+</section>
+
+<section class="page">
+  <div class="etape">
+    <div class="entete"><span class="num c-duo">5</span><h3 class="titre-etape">Brancher joueretplanter.com sur Vercel</h3></div>
+    <p class="pourquoi">C'est le moment où le vrai site bascule. Pas de coupure : les visiteurs passent d'un site à l'autre sans le voir.</p>
+    <ol class="actions">
+      <li><span class="qui claude">Claude</span>Dis-lui : <i>« Ajoute joueretplanter.com au projet Vercel. »</i> Il te donne deux « serveurs de noms ».</li>
+      <li><span class="qui toi">Toi</span>Sur WordPress.com : <b>Domaines › joueretplanter.com › Serveurs de noms</b>. Remplace ceux de WordPress par ceux de Vercel, puis enregistre.</li>
+      <li><span class="qui toi">Toi</span>Attends quelques heures (au plus un jour), puis ouvre joueretplanter.com.</li>
+    </ol>
+    <div class="ok"><b>C'est bon quand</b> Claude confirme que joueretplanter.com répond depuis Vercel, avec le cadenas HTTPS.</div>
+  </div>
+
+  <div class="etape">
+    <div class="entete"><span class="num c-duo">6</span><h3 class="titre-etape">Valider l'adresse d'envoi des emails</h3></div>
+    <p class="pourquoi">Prouver à Gmail, Outlook et les autres que la newsletter vient bien de joueretplanter.com. Sans ça, elle risque de finir en spam.</p>
+    <ol class="actions">
+      <li><span class="qui toi">Toi</span>Dans Brevo : <b>Expéditeurs, domaines et IP dédiées › Domaines</b>, ajoute joueretplanter.com.</li>
+      <li><span class="qui toi">Toi</span>Brevo affiche quelques lignes techniques (« enregistrements DNS »). Copie-les toutes à Claude.</li>
+      <li><span class="qui claude">Claude</span>Il les ajoute chez Vercel.</li>
+      <li><span class="qui toi">Toi</span>Dans Brevo, clique sur « Vérifier » ou « Authentifier ».</li>
+    </ol>
+    <div class="ok"><b>C'est bon quand</b> Brevo affiche le domaine comme authentifié.</div>
+  </div>
+  <div class="pied"><span>Quitter WordPress pas à pas</span><span>5</span></div>
+</section>
+
+<!-- 5. Étapes 7 et 8 -->
+<section class="page">
+  <div class="etape">
+    <div class="entete"><span class="num c-duo">7</span><h3 class="titre-etape">Transférer le nom de domaine</h3></div>
+    <p class="pourquoi">Après ça, plus rien ne dépend de WordPress. Le site reste en ligne pendant tout le transfert.</p>
+    <ol class="actions">
+      <li><span class="qui toi">Toi</span>Sur WordPress.com : <b>Domaines › joueretplanter.com › Transférer</b>. Déverrouille le domaine et demande le <b>code d'autorisation</b>.</li>
+      <li><span class="qui toi">Toi</span>Récupère ce code (affiché ou envoyé par email). Garde-le pour toi : c'est la clé du domaine.</li>
+      <li><span class="qui claude">Claude</span>Il lance le transfert vers Vercel, et c'est toi qui tapes le code quand Vercel le demande.</li>
+      <li><span class="qui toi">Toi</span>Vérifie le prix affiché, paie un an de renouvellement, puis valide l'email de confirmation s'il y en a un.</li>
+      <li><span class="qui toi">Toi</span>Patiente : un transfert prend jusqu'à 5 à 7 jours.</li>
+    </ol>
+    <div class="attention"><b>Bon à savoir :</b> un domaine ne peut pas être transféré dans les 60 jours qui suivent son achat. Si WordPress refuse, c'est sans doute pour ça.</div>
+    <div class="ok"><b>C'est bon quand</b> joueretplanter.com apparaît dans Vercel, dans la partie Domaines, comme domaine enregistré chez Vercel.</div>
+  </div>
+
+  <div class="etape">
+    <div class="entete"><span class="num c-toi">8</span><h3 class="titre-etape">Fermer WordPress</h3></div>
+    <p class="pourquoi">Seulement quand les étapes 1 à 7 sont cochées.</p>
+    <ol class="actions">
+      <li><span class="qui toi">Toi</span>Sur WordPress.com, coupe l'envoi automatique de la newsletter de joueretplanter.com. Sinon, des abonnés recevraient les emails en double.</li>
+      <li><span class="qui toi">Toi</span>Annule le plan Personnel de joueretplanter.com : il se renouvelle le 25 juin 2027.</li>
+      <li><span class="qui toi">Toi</span>Ton compte gère aussi un autre site : <b>ne touche à rien d'autre</b> que joueretplanter.com.</li>
+    </ol>
+    <div class="dire"><b>Dernier geste :</b> envoie une première newsletter depuis Brevo pour dire aux abonnés que la newsletter a déménagé. Le lien de désinscription y sera automatiquement.</div>
+  </div>
+  <div class="pied"><span>Quitter WordPress pas à pas</span><span>6</span></div>
+</section>
+
+<!-- 6. Après -->
+<section class="page fin">
+  <h2 class="section">Et après ?</h2>
+  <p class="sous">Ce qui change au quotidien.</p>
+  <table>
+    <tr><td>Modifier un texte du site</td><td>Demande à Claude dans le dossier <code>jouer-et-planter</code>. Il modifie la page et republie le site. Il n'y a plus d'éditeur WordPress.</td></tr>
+    <tr><td>Envoyer une newsletter</td><td>Dans Brevo : <b>Campagnes › Créer une campagne</b>. Elle ne part plus toute seule à chaque article comme avant, c'est toi qui l'envoies.</td></tr>
+    <tr><td>Limite de l'offre gratuite Brevo</td><td>300 emails par jour, et le logo Brevo en bas des emails.</td></tr>
+    <tr><td>Recevoir des dons</td><td>Rien ne change : le formulaire HelloAsso est le même.</td></tr>
+    <tr><td>Commentaires sous les articles</td><td>Ils disparaissent : un site sans WordPress ne peut pas les gérer.</td></tr>
+    <tr><td>Renouveler le domaine</td><td>Chaque année chez Vercel, avec la carte enregistrée sur ton compte Vercel.</td></tr>
+  </table>
+
+  <h2 class="section" style="margin-top:12mm">Ma liste</h2>
+  <p class="sous">À cocher au crayon.</p>
+  <p><span class="case" style="background:var(--vert);border-color:var(--vert)"></span>1. Site en ligne sur jouer-et-planter.vercel.app (fait le 9 novembre)</p>
+  <p><span class="case"></span>2. Compte Brevo créé</p>
+  <p><span class="case"></span>3. Formulaire branché, inscription testée</p>
+  <p><span class="case"></span>4. Abonnés importés dans Brevo</p>
+  <p><span class="case"></span>5. joueretplanter.com servi par Vercel</p>
+  <p><span class="case"></span>6. Domaine authentifié dans Brevo</p>
+  <p><span class="case"></span>7. Domaine transféré chez Vercel</p>
+  <p><span class="case"></span>8. WordPress fermé, première newsletter Brevo envoyée</p>
+  <div class="pied"><span>Quitter WordPress pas à pas</span><span>7</span></div>
+</section>
+
+</body>
+</html>

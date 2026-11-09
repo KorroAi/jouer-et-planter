@@ -1,0 +1,45 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "public",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:chemin*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.joueretplanter.com"
+        }
+      ],
+      "destination": "https://joueretplanter.com/:chemin*",
+      "permanent": true
+    },
+    {
+      "source": "/accueil/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/challenges-1er/",
+      "destination": "/2026/07/22/challenges-1er/",
+      "permanent": true
+    },
+    {
+      "source": "/1er-challenges/",
+      "destination": "/2026/10/08/1er-challenges/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:chemin*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
+}
