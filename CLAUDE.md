@@ -37,7 +37,9 @@ Newsletter : **Brevo** (remplace Jetpack). Domaine : transfert de WordPress.com 
 - PDF publics dans `public/documents/` (fiche bénévole : numéro de téléphone effacé, à la demande de l'utilisateur).
 - Brevo : formulaire branché (`outils/config.json`), expéditeur newsletter@joueretplanter.com (réponses vers le Proton),
   domaine authentifié, modèle « Modèle de newsletter Jouer et Planter » (source `outils/newsletter/modele-newsletter.html`).
-- Publier : `vercel deploy` (aperçu) puis `vercel deploy --prod`.
+- Publier : `git push` sur `main` (dépôt public github.com/KorroAi/jouer-et-planter, branché à Vercel le 10/11/2026 :
+  chaque push sur main part en production). Aperçu sans push : `vercel deploy`. Collaborateur : compte GitHub `Joueretplanter`
+  (droit d'écriture). Dépôt public : n'y mettre aucun secret ni numéro de téléphone.
 
 ## Aperçu local
 `python -m http.server 8765 --directory public` puis http://localhost:8765.
