@@ -110,7 +110,7 @@ window.addEventListener('load', function () {
           iconSize: [20, 20], iconAnchor: [10 - d[0], 10 - d[1]], popupAnchor: [d[0], d[1] - 10]
         });
         var m = L.marker([lieu.lat, lieu.lng], { icon: icone, title: lieu.nom }).addTo(carte)
-          .bindPopup('<b>' + lieu.nom + '</b><br>' + cat.texte);
+          .bindPopup('<b>' + lieu.nom + '</b><br>' + (cat.nom ? cat.nom + ' (' + cat.texte + ')' : cat.texte));
         marqueurs.push(m);
       });
       points.push([lieu.lat, lieu.lng]);
@@ -124,7 +124,7 @@ window.addEventListener('load', function () {
         li.appendChild(b); liste.appendChild(li);
       }
     });
-    carte.fitBounds(points, { padding: [30, 30] });
+    if (points.length) carte.fitBounds(points, { padding: [30, 30] });
   });
 });
 

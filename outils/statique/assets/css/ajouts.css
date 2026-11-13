@@ -172,3 +172,9 @@ main .entry-content { padding-bottom: 0 !important; margin-bottom: 0 !important;
 .jp2-vide { text-align: center; font-size: 1.1rem; }
 
 .jp2-form input, .jp2-form select, .jp2-form textarea { display: block; width: 100%; box-sizing: border-box; margin-top: 6px; }
+/* 13/11/2026 : page Nos actions, planter, légende de carte */
+.jp2-sous-grand { font-family: Fredoka, sans-serif; font-weight: 600; font-size: clamp(1.3rem, 2.6vw, 1.9rem); margin: -.3em 0 1.2em; }
+.jp2-grille--2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) { .jp2-grille--2 { grid-template-columns: 1fr; } }
+.jp2-pile { display: grid; gap: 20px; align-content: start; }
+.jp2-badge { display: inline-block; background: #ff1fa8; color: #fff; border-radius: 999px; padding: .05em .7em; font-size: .85rem; font-weight: 600; white-space: nowrap; }

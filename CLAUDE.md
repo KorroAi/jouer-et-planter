@@ -23,7 +23,10 @@ Newsletter : **Brevo** (remplace Jetpack). Domaine : transfert de WordPress.com 
   refait le menu partout, ajoute compteurs + prochain rendez vous (accueil) et documents (/about/), titres/descriptions SEO,
   `sitemap.xml`, `robots.txt`. Chiffres, rendez vous, documents, villes, SEO : `outils/contenu/site.json`.
 - Carte des actions (page /carte/, accueil, dons) : `site.json > carte` (catégories colorées + lieux, une ville peut avoir
-  plusieurs catégories). La catégorie « fêtes » (rose) n'a encore aucun lieu : elle n'apparaît pas tant qu'il n'y en a pas.
+  plusieurs catégories). Légende : `nom` (`texte`) + badge `etat` (« fêtes » rose = « en préparation », sans lieu encore) ;
+  toutes les catégories s'affichent, même sans lieu.
+- /nos-actions/ (13/11) : chiffres, description des actions et carte injectés après le bandeau par `pages.py`
+  (`site.json > actions`). /challenges/ : bloc « Tu veux te challenger ? » injecté par `pages.py` (bloc `defi`).
 - /about/ : bandeau WordPress d'origine + `outils/contenu/valeurs.html` + documents. Accueil, /challenges/, /faire-un-dons/
   ont été retouchés directement dans `public/` (pas de copie ailleurs : faire attention).
 - Piège vu le 09/11 : des `\b` / `\1` écrits via heredoc bash dans du Python sont devenus des caractères invisibles

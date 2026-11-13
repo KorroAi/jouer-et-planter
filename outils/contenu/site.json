@@ -64,7 +64,7 @@
       "h1": "Planter",
       "accroche": "Rendre chaque commune autonome pour se nourrir, avec des agriculteurs engagés pour 20 ans.",
       "titre": "Planter : potagers, forêt comestible et autonomie alimentaire | Jouer et Planter",
-      "description": "Jouer et Planter plante et donne des graines chez des particuliers et des agriculteurs : potagers résistants à la sécheresse et sans pesticide, contre un engagement de 20 ans devant notaire à cultiver des plantes respectueuses de l'environnement."
+      "description": "Jouer et Planter plante et donne des graines chez des particuliers et des agriculteurs : potagers résistants à la sécheresse et sans pesticide, contre un engagement de 20 ans à cultiver des plantes respectueuses de l'environnement."
     },
     {
       "slug": "artistes",
@@ -130,23 +130,28 @@
     }
   },
   "carte": {
-    "maj": "10 novembre 2026",
+    "maj": "13 novembre 2026",
     "categories": {
       "artistes": {
         "couleur": "#fd9a08",
-        "texte": "Villes où les artistes de Jouer et Planter sont déjà allés jouer"
-      },
-      "agriculture": {
-        "couleur": "#1c5a12",
-        "texte": "Terrains agricoles où l'association cultive pour l'autonomie alimentaire du village"
-      },
-      "fetes": {
-        "couleur": "#ff1fa8",
-        "texte": "Lieux où l'association a déjà fait une fête"
+        "nom": "Nos artistes",
+        "texte": "jouant et donnant des graines"
       },
       "challenges": {
         "couleur": "#4fc3f7",
-        "texte": "Nos événements de challenges"
+        "nom": "Nos challenges",
+        "texte": "pour dépasser nos limites ensemble"
+      },
+      "agriculture": {
+        "couleur": "#1c5a12",
+        "nom": "Agriculteurs aidés",
+        "texte": "une aide concrète à l'autonomie alimentaire saine"
+      },
+      "fetes": {
+        "couleur": "#ff1fa8",
+        "nom": "Lieux de nos fêtes",
+        "texte": "dates et lieux en planification : buffet, spectacle vivant et graines données !",
+        "etat": "en préparation"
       }
     },
     "lieux": [
@@ -368,6 +373,41 @@
         "cat": [
           "artistes"
         ]
+      }
+    ]
+  },
+  "actions": {
+    "titre": "Grâce à vos dons",
+    "sous_titre": "voici les chiffres de nos actions",
+    "compteurs": [
+      {
+        "nombre": 120,
+        "texte": "sachets de graines donnés"
+      },
+      {
+        "nombre": 1,
+        "texte": "agriculteur aidé"
+      },
+      {
+        "nombre": 21,
+        "texte": "arts de rue donnés par nos artistes"
+      }
+    ],
+    "descriptions": [
+      {
+        "titre": "Soutenir nos artistes",
+        "texte": "Nous soutenons des artistes qui vont jouer dans la rue et donner des graines.",
+        "lien": "/artistes/"
+      },
+      {
+        "titre": "Créer des potagers",
+        "texte": "Création et développement de potagers chez les particuliers ou les agriculteurs, pour créer l'autonomie alimentaire de nos villages.",
+        "lien": "/planter/"
+      },
+      {
+        "titre": "Organiser de grandes fêtes",
+        "texte": "Création de grandes fêtes Jouer et Planter pour raviver la joie dans nos villages : banquet convivial gratuit, arts vivants gratuits et dons de graines.",
+        "lien": "/jouer/"
       }
     ]
   },

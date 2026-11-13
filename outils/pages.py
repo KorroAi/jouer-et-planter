@@ -110,10 +110,12 @@ LEAFLET = ('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
 def carte_bloc(titre: bool = True) -> str:
     """Carte des actions (Leaflet) avec légende ; données dans site.json > carte."""
     c = DONNEES["carte"]
-    utilisees = {k for l in c["lieux"] for k in l["cat"]}
     legende = "".join(
-        f'<li><span class="jp2-point" style="background:{v["couleur"]}"></span>{v["texte"]}</li>'
-        for k, v in c["categories"].items() if k in utilisees
+        f'<li><span class="jp2-point" style="background:{v["couleur"]}"></span>'
+        f'<span><b>{v["nom"]}</b> ({v["texte"]})'
+        + (f' <span class="jp2-badge">{v["etat"]}</span>' if v.get("etat") else "")
+        + "</span></li>"
+        for v in c["categories"].values()
     )
     entete = ('<h2 class="jp2-titre">La carte de nos actions</h2>'
               '<p class="jp2-intro">Partout où Jouer et Planter est déjà passé.</p>') if titre else ""
@@ -170,7 +172,7 @@ def valeurs_page(t: str) -> str:
 
 
 def nouvelles_pages() -> None:
-    coquille = lire(PUB / "nos-actions" / "index.html")
+    coquille = lire(PUB / "nos-actions" / "index.html").replace(LEAFLET, "")
     debut = coquille.index('<div class="entry-content')
     debut = coquille.index(">", debut) + 1
     fin = coquille.index("</main>")
@@ -213,6 +215,59 @@ def accueil(t: str) -> str:
             j = i + m.end()
             break
     return t[:j] + bloc("accueil", section) + t[j:]
+
+
+def apres_bandeau(t: str, nom: str, contenu: str) -> str:
+    """Place un bloc juste après le premier bandeau photo de la page."""
+    t = retirer_bloc(t, nom)
+    i = t.index('<div class="wp-block-cover alignfull')
+    profondeur, j = 0, i
+    for m in re.finditer(r"<div\b|</div>", t[i:]):
+        profondeur += 1 if m.group(0) == "<div" else -1
+        if profondeur == 0:
+            j = i + m.end()
+            break
+    return t[:j] + bloc(nom, contenu) + t[j:]
+
+
+def nos_actions(t: str) -> str:
+    """Page /nos-actions/ : chiffres (site.json > actions), description de nos actions, carte."""
+    a = DONNEES["actions"]
+    chiffres = "".join(
+        f'<div class="jp2-compteur"><span class="jp2-compteur__nombre">{x.get("prefixe", "")}<b data-cible="{x["nombre"]}">{x["nombre"]}</b></span>'
+        f'<span class="jp2-compteur__texte">{x["texte"]}</span></div>'
+        for x in a["compteurs"]
+    )
+    couleurs = ("orange", "vert", "bleu")
+    cartes = "".join(
+        f'<a class="jp2-carte jp2-carte--{couleurs[i % 3]} jp2-carte--lien" href="{x["lien"]}"><h3>{x["titre"]}</h3>'
+        f'<p>{x["texte"]}</p><span class="jp2-fleche">Découvrir →</span></a>'
+        for i, x in enumerate(a["descriptions"])
+    )
+    section = (
+        '<section class="jp2-section jp2-section--bleu alignfull jp2-dons"><div class="jp2-contenu">'
+        f'<h2 class="jp2-grand">{a["titre"]}</h2><p class="jp2-sous-grand">{a["sous_titre"]}</p>'
+        f'<div class="jp2-compteurs">{chiffres}</div></div></section>'
+        '<section class="jp2-section alignfull"><div class="jp2-contenu">'
+        '<h2 class="jp2-titre">Description de nos actions</h2>'
+        f'<div class="jp2-grille">{cartes}</div></div></section>'
+        + carte_bloc()
+    )
+    return apres_bandeau(t, "actions", section)
+
+
+def challenges(t: str) -> str:
+    """Page /challenges/ : appel à venir relever un défi, juste après le bandeau."""
+    section = (
+        '<section class="jp2-section jp2-section--vert alignfull jp2-dons"><div class="jp2-contenu">'
+        '<h2 class="jp2-titre">Tu veux te challenger ? Rejoins nous dans un challenge physique !</h2>'
+        '<p class="jp2-intro" style="margin-left:auto;margin-right:auto">Pas besoin d’être bénévole pour relever le défi : '
+        'envoie nous un email et rejoins le défi !!</p>'
+        '<a class="wp-block-button__link wp-element-button jp2-btn jp2-btn--orange" '
+        'href="mailto:joueretplanter@proton.me?subject=Je%20veux%20relever%20un%20challenge">Envoie nous un email</a>'
+        "</div></section>"
+    )
+    return apres_bandeau(t, "defi", section)
 
 
 def valeurs(t: str) -> str:
@@ -260,7 +315,11 @@ def main() -> None:
             t = t[:fin] + bloc("carte", carte_bloc()) + t[fin:]
         if chemin == "/about/":
             t = valeurs(valeurs_page(t))
-        if chemin in ("/", "/faire-un-dons/", "/carte/"):
+        if chemin == "/nos-actions/":
+            t = nos_actions(t)
+        if chemin == "/challenges/":
+            t = challenges(t)
+        if chemin in ("/", "/faire-un-dons/", "/carte/", "/nos-actions/"):
             t = avec_leaflet(t)
         info = DONNEES["seo"].get(chemin) or next((p for p in DONNEES["pages"] if f"/{p['slug']}/" == chemin), None)
         if info:
